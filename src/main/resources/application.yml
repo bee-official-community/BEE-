@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: BEE-homepage-backend
+
+  datasource:
+    url: ${AWS_MYSQL_SERVER_URL}
+    username: ${AWS_MYSQL_SERVER_USERNAME}
+    password: ${AWS_MYSQL_SERVER_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+#ssh:
+#  user: "ec2-user"
+#  host: "43.202.56.212"
+#  port: 22
+#  privateKeyPath: "C:\\Users\\YOU\\.ssh\\bee-homepage-db-proxy-key.pem"
+#  remoteHost: "bee-homepage-db.cnoqmogm2wv7.ap-northeast-2.rds.amazonaws.com"
+#  localPort: 3307
+#  remotePort: 3306
+#  localHost: "localhost"
