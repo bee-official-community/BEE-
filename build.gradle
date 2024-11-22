@@ -29,6 +29,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
 
     // MySQL
     runtimeOnly 'com.mysql:mysql-connector-j'
@@ -39,10 +40,14 @@ dependencies {
     // SSHJ ( SSH 터널링을 위한 라이브러리 )
     implementation 'com.hierynomus:sshj:0.32.0'
 
+    // Amazon SES
+    implementation 'com.amazonaws:aws-java-sdk-ses:1.12.3'
+
     // lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
+    //
 
     // Test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
