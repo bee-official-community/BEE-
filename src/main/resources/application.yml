@@ -2,11 +2,17 @@ spring:
   application:
     name: BEE-homepage-backend
 
+#  datasource:
+#    url: ${AWS_MYSQL_SERVER_URL}
+#    username: ${AWS_MYSQL_SERVER_USERNAME}
+#    password: ${AWS_MYSQL_SERVER_PASSWORD}
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+
   datasource:
-    url: ${AWS_MYSQL_SERVER_URL}
-    username: ${AWS_MYSQL_SERVER_USERNAME}
-    password: ${AWS_MYSQL_SERVER_PASSWORD}
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:h2:tcp://localhost/~/beeTest
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
 
   jpa:
     hibernate:
