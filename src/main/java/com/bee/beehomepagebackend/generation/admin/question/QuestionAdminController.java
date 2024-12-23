@@ -1,6 +1,8 @@
 package com.bee.beehomepagebackend.generation.admin.question;
 
 import com.bee.beehomepagebackend.generation.admin.question.response.CreateQuestionResponse;
+import com.bee.beehomepagebackend.generation.admin.question.response.DeleteQuestionResponse;
+import com.bee.beehomepagebackend.generation.admin.question.response.UpdateQuestionResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -21,12 +23,14 @@ public class QuestionAdminController {
     }
 
     @PostMapping("/{questionId}")
-    public void updateQuestion() {
+    public ResponseEntity<UpdateQuestionResponse> updateQuestion() {
 
+        return ResponseEntity.ok(null);
     }
 
     @PostMapping("/{questionId}")
-    public void deleteQuestion() {
+    public ResponseEntity<DeleteQuestionResponse> deleteQuestion() {
 
+        return ResponseEntity.ok(null);
     }
 }

@@ -14,10 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class QuestionController {
 
+    private final QuestionService questionService;
+
     @GetMapping
-    public ResponseEntity<GetAllQuestionsResponse> findAllQuestions() {
-        GetAllQuestionsResponse response = new GetAllQuestionsResponse();
-        return ResponseEntity.ok(response);
+    public ResponseEntity<GetAllQuestionsResponse> getAllQuestions() {
+        return ResponseEntity.ok(questionService.getAllQuestions());
     }
 
 }
