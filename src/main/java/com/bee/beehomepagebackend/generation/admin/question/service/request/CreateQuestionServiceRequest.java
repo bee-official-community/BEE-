@@ -9,18 +9,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreateQuestionServiceRequest {
 
-    private Integer order;
+    private Integer sequence;
     private String content;
 
     @Builder
-    public CreateQuestionServiceRequest(Integer order, String content) {
-        this.order = order;
+    public CreateQuestionServiceRequest(Integer sequence, String content) {
+        this.sequence = sequence;
         this.content = content;
     }
 
     public Question toEntity() {
         return Question.builder()
-                .order(order)
+                .sequence(sequence)
                 .content(content)
                 .build();
     }

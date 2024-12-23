@@ -28,6 +28,6 @@ public class Applicant {
 
     private String phoneNumber;
 
-    private Map<Long, String> answers;
+//    private Answer answers;
 
 }

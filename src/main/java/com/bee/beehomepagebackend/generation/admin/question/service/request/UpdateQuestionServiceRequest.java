@@ -8,14 +8,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UpdateQuestionServiceRequest {
 
-    private Long questionId;
-    private Integer order;
+    private Long id;
+    private Integer sequence;
     private String content;
 
     @Builder
-    public UpdateQuestionServiceRequest(Long questionId, Integer order, String content) {
-        this.questionId = questionId;
-        this.order = order;
+    public UpdateQuestionServiceRequest(Long id, Integer sequence, String content) {
+        this.id = id;
+        this.sequence = sequence;
         this.content = content;
     }
 }

@@ -13,9 +13,9 @@ public class Question {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long questionId;
+    private Long id;
 
-    private Integer order;
+    private Integer sequence;
     private String content;
 
     public void updateContent(String content) {
@@ -23,8 +23,8 @@ public class Question {
     }
 
     @Builder
-    public Question(Integer order, String content) {
-        this.order = order;
+    public Question(Integer sequence, String content) {
+        this.sequence = sequence;
         this.content = content;
     }
 }

@@ -7,21 +7,21 @@ import lombok.Getter;
 @Getter
 public class UpdateQuestionResponse {
 
-    private Long questionId;
-    private Integer order;
+    private Long id;
+    private Integer sequence;
     private String content;
 
     @Builder
-    public UpdateQuestionResponse(Long questionId, Integer order, String content) {
-        this.questionId = questionId;
-        this.order = order;
+    public UpdateQuestionResponse(Long id, Integer sequence, String content) {
+        this.id = id;
+        this.sequence = sequence;
         this.content = content;
     }
 
     public static UpdateQuestionResponse of(Question question) {
         return UpdateQuestionResponse.builder()
-                .questionId(question.getQuestionId())
-                .order(question.getOrder())
+                .id(question.getId())
+                .sequence(question.getSequence())
                 .content(question.getContent())
                 .build();
     }
