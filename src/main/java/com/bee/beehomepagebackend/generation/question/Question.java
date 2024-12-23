@@ -14,6 +14,10 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long questionId;
 
-    private String text;
+    private Integer order;
+    private String content;
 
+    public void updateContent(String content) {
+        this.content = content;
+    }
 }

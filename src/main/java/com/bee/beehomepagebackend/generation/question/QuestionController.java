@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/generations")
+@RequestMapping("/api/generations/questions")
 @RequiredArgsConstructor
 public class QuestionController {
 
