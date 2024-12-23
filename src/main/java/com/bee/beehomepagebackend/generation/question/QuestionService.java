@@ -1,6 +1,5 @@
 package com.bee.beehomepagebackend.generation.question;
 
-import com.bee.beehomepagebackend.generation.applicant.Applicant;
 import com.bee.beehomepagebackend.generation.question.response.GetAllQuestionsResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package com.bee.beehomepagebackend.generation.admin.question.response;
+package com.bee.beehomepagebackend.generation.admin.question.controller.response;
 
 import com.bee.beehomepagebackend.generation.question.Question;
 import lombok.Builder;

@@ -1,9 +1,9 @@
-package com.bee.beehomepagebackend.generation.admin.question;
+package com.bee.beehomepagebackend.generation.admin.question.service;
 
-import com.bee.beehomepagebackend.generation.admin.question.request.CreateQuestionServiceRequest;
-import com.bee.beehomepagebackend.generation.admin.question.request.UpdateQuestionServiceRequest;
-import com.bee.beehomepagebackend.generation.admin.question.response.CreateQuestionResponse;
-import com.bee.beehomepagebackend.generation.admin.question.response.UpdateQuestionResponse;
+import com.bee.beehomepagebackend.generation.admin.question.service.request.CreateQuestionServiceRequest;
+import com.bee.beehomepagebackend.generation.admin.question.service.request.UpdateQuestionServiceRequest;
+import com.bee.beehomepagebackend.generation.admin.question.controller.response.CreateQuestionResponse;
+import com.bee.beehomepagebackend.generation.admin.question.controller.response.UpdateQuestionResponse;
 import com.bee.beehomepagebackend.generation.question.Question;
 import com.bee.beehomepagebackend.generation.question.QuestionRepository;
 import jakarta.persistence.EntityNotFoundException;

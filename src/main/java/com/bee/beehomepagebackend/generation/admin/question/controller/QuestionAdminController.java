@@ -1,9 +1,10 @@
-package com.bee.beehomepagebackend.generation.admin.question;
+package com.bee.beehomepagebackend.generation.admin.question.controller;
 
-import com.bee.beehomepagebackend.generation.admin.question.request.CreateQuestionRequest;
-import com.bee.beehomepagebackend.generation.admin.question.request.UpdateQuestionRequest;
-import com.bee.beehomepagebackend.generation.admin.question.response.CreateQuestionResponse;
-import com.bee.beehomepagebackend.generation.admin.question.response.UpdateQuestionResponse;
+import com.bee.beehomepagebackend.generation.admin.question.service.QuestionAdminService;
+import com.bee.beehomepagebackend.generation.admin.question.controller.request.CreateQuestionRequest;
+import com.bee.beehomepagebackend.generation.admin.question.controller.request.UpdateQuestionRequest;
+import com.bee.beehomepagebackend.generation.admin.question.controller.response.CreateQuestionResponse;
+import com.bee.beehomepagebackend.generation.admin.question.controller.response.UpdateQuestionResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

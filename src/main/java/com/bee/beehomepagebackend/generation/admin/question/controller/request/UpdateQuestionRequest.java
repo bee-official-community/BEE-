@@ -1,6 +1,6 @@
-package com.bee.beehomepagebackend.generation.admin.question.request;
+package com.bee.beehomepagebackend.generation.admin.question.controller.request;
 
-import lombok.Builder;
+import com.bee.beehomepagebackend.generation.admin.question.service.request.UpdateQuestionServiceRequest;
 
 public class UpdateQuestionRequest {
 

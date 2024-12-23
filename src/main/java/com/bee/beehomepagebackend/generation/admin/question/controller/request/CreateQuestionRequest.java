@@ -1,5 +1,6 @@
-package com.bee.beehomepagebackend.generation.admin.question.request;
+package com.bee.beehomepagebackend.generation.admin.question.controller.request;
 
+import com.bee.beehomepagebackend.generation.admin.question.service.request.CreateQuestionServiceRequest;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
