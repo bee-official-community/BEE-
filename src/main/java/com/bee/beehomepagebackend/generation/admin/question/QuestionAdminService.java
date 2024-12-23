@@ -1,6 +1,8 @@
 package com.bee.beehomepagebackend.generation.admin.question;
 
+import com.bee.beehomepagebackend.generation.admin.question.request.CreateQuestionServiceRequest;
 import com.bee.beehomepagebackend.generation.admin.question.request.UpdateQuestionServiceRequest;
+import com.bee.beehomepagebackend.generation.admin.question.response.CreateQuestionResponse;
 import com.bee.beehomepagebackend.generation.admin.question.response.UpdateQuestionResponse;
 import com.bee.beehomepagebackend.generation.question.Question;
 import com.bee.beehomepagebackend.generation.question.QuestionRepository;
@@ -32,5 +34,15 @@ public class QuestionAdminService {
         question.updateContent(request.getContent());
 
         return UpdateQuestionResponse.of(question);
+    }
+
+    @Transactional
+    public CreateQuestionResponse createQuestion(CreateQuestionServiceRequest request) {
+
+        Question question = request.toEntity();
+        Question savedQuestion = questionRepository.save(question);
+
+        return CreateQuestionResponse.of(savedQuestion);
+
     }
 }

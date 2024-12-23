@@ -1,6 +1,7 @@
 package com.bee.beehomepagebackend.generation.question;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -18,6 +19,12 @@ public class Question {
     private String content;
 
     public void updateContent(String content) {
+        this.content = content;
+    }
+
+    @Builder
+    public Question(Integer order, String content) {
+        this.order = order;
         this.content = content;
     }
 }
