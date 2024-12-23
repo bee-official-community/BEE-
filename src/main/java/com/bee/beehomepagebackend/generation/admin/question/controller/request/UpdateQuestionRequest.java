@@ -4,13 +4,11 @@ import com.bee.beehomepagebackend.generation.admin.question.service.request.Upda
 
 public class UpdateQuestionRequest {
 
-    private Long id;
     private Integer sequence;
     private String content;
 
     public UpdateQuestionServiceRequest toServiceRequest() {
         return UpdateQuestionServiceRequest.builder()
-                .id(id)
                 .sequence(sequence)
                 .content(content)
                 .build();
