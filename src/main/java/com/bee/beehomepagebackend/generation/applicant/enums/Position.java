@@ -1,4 +1,4 @@
-package com.bee.beehomepagebackend.generation.enums;
+package com.bee.beehomepagebackend.generation.applicant.enums;
 
 public enum Position {
 
