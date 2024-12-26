@@ -2,28 +2,49 @@ spring:
   application:
     name: BEE-homepage-backend
 
-#  datasource:
-#    url: ${AWS_MYSQL_SERVER_URL}
-#    username: ${AWS_MYSQL_SERVER_USERNAME}
-#    password: ${AWS_MYSQL_SERVER_PASSWORD}
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-
   datasource:
-    url: jdbc:h2:tcp://localhost/~/beeTest
+    url: jdbc:h2:file:./data/beeTest # 파일 기반 H2 데이터베이스
     driver-class-name: org.h2.Driver
     username: sa
     password:
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: update # 애플리케이션 실행 시 스키마 자동 업데이트
+    show-sql: true     # SQL 쿼리 출력 활성화
 
-#ssh:
-#  user: "ec2-user"
-#  host: "43.202.56.212"
-#  port: 22
-#  privateKeyPath: "C:\\Users\\YOU\\.ssh\\bee-homepage-db-proxy-key.pem"
-#  remoteHost: "bee-homepage-db.cnoqmogm2wv7.ap-northeast-2.rds.amazonaws.com"
-#  localPort: 3307
-#  remotePort: 3306
-#  localHost: "localhost"
+  h2:
+    console:
+      enabled: true      # H2 웹 콘솔 활성화
+      path: /h2-console  # H2 콘솔 URL 경로 설정 (기본값: /h2-console)
+
+
+#spring:
+#  application:
+#    name: BEE-homepage-backend
+#
+##  datasource:
+##    url: ${AWS_MYSQL_SERVER_URL}
+##    username: ${AWS_MYSQL_SERVER_USERNAME}
+##    password: ${AWS_MYSQL_SERVER_PASSWORD}
+##    driver-class-name: com.mysql.cj.jdbc.Driver
+#
+#  datasource:
+#    url: jdbc:h2:tcp://localhost/~/beeTest
+#    driver-class-name: org.h2.Driver
+#    username: sa
+#    password:
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#
+##ssh:
+##  user: "ec2-user"
+##  host: "43.202.56.212"
+##  port: 22
+##  privateKeyPath: "C:\\Users\\YOU\\.ssh\\bee-homepage-db-proxy-key.pem"
+##  remoteHost: "bee-homepage-db.cnoqmogm2wv7.ap-northeast-2.rds.amazonaws.com"
+##  localPort: 3307
+##  remotePort: 3306
+##  localHost: "localhost"
