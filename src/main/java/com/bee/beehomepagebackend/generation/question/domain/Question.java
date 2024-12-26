@@ -1,9 +1,14 @@
-package com.bee.beehomepagebackend.generation.question;
+package com.bee.beehomepagebackend.generation.question.domain;
 
+import com.bee.beehomepagebackend.generation.answer.domain.Answer;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @Entity
@@ -16,7 +21,17 @@ public class Question {
     private Long id;
 
     private Integer sequence;
+
     private String content;
+
+    @OneToOne
+    private Answer answer;
+
+    @CreatedDate
+    private LocalDateTime createdDateTime;
+
+    @LastModifiedDate
+    private LocalDateTime modifiedDateTime;
 
     public void updateContent(String content) {
         this.content = content;

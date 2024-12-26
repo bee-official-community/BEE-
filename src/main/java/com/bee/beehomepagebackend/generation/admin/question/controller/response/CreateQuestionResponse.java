@@ -1,6 +1,6 @@
 package com.bee.beehomepagebackend.generation.admin.question.controller.response;
 
-import com.bee.beehomepagebackend.generation.question.Question;
+import com.bee.beehomepagebackend.generation.question.domain.Question;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

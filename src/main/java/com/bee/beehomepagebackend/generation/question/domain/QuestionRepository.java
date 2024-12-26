@@ -1,6 +1,5 @@
-package com.bee.beehomepagebackend.generation.question;
+package com.bee.beehomepagebackend.generation.question.domain;
 
-import com.bee.beehomepagebackend.generation.applicant.Applicant;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

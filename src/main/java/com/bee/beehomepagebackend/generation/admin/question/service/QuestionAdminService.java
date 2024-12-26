@@ -4,8 +4,8 @@ import com.bee.beehomepagebackend.generation.admin.question.service.request.Crea
 import com.bee.beehomepagebackend.generation.admin.question.service.request.UpdateQuestionServiceRequest;
 import com.bee.beehomepagebackend.generation.admin.question.controller.response.CreateQuestionResponse;
 import com.bee.beehomepagebackend.generation.admin.question.controller.response.UpdateQuestionResponse;
-import com.bee.beehomepagebackend.generation.question.Question;
-import com.bee.beehomepagebackend.generation.question.QuestionRepository;
+import com.bee.beehomepagebackend.generation.question.domain.Question;
+import com.bee.beehomepagebackend.generation.question.domain.QuestionRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
