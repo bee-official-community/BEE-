@@ -1,9 +1,9 @@
 package com.bee.beehomepagebackend.recruitment.applicant;
 
-import com.bee.beehomepagebackend.recruitment.recruitment.Recruitment;
+import com.bee.beehomepagebackend.recruitment.Recruitment;
 import com.bee.beehomepagebackend.recruitment.answer.Answer;
-import com.bee.beehomepagebackend.recruitment.recruitment.enums.Generation;
-import com.bee.beehomepagebackend.recruitment.recruitment.enums.Position;
+import com.bee.beehomepagebackend.recruitment.enums.Generation;
+import com.bee.beehomepagebackend.recruitment.enums.Position;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;

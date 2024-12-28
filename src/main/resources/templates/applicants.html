@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>지원자 목록 페이지</title>
+</head>
+<body>
+
+<h1>지원자 목록</h1>
+<table th:each="applicant : ${applicants}">
+    <thead>
+    <tr>
+        <th>이름</th>
+        <th>기수</th>
+        <th>포지션</th>
+        <th>email</th>
+        <th>휴대전화번호</th>
+        <th>답변</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${applicant.getUsername()}"></td>
+        <td th:text="${applicant.getGeneration()}"></td>
+        <td th:text="${applicant.getPosition()}"></td>
+        <td th:text="${applicant.getEmail()}"></td>
+        <td th:text="${applicant.getPhoneNumber()}"></td>
+        <td><a th:href="@{/admin/recruits/answers/{applicantId}(applicantId=${applicant.id})}">답변 조회</a></td>
+    </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>

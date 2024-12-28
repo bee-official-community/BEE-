@@ -16,9 +16,9 @@ public class QuestionAdminController {
     private final QuestionAdminService questionAdminService;
 
     @GetMapping
-    public String adminMain(Model model) {
+    public String getAllQuestions(Model model) {
         model.addAttribute("questions", questionAdminService.getAllQuestions());
-        return "admin-recruit-main";
+        return "questions";
     }
 
     @GetMapping("/create")

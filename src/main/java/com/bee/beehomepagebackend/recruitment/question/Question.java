@@ -1,6 +1,6 @@
 package com.bee.beehomepagebackend.recruitment.question;
 
-import com.bee.beehomepagebackend.recruitment.recruitment.Recruitment;
+import com.bee.beehomepagebackend.recruitment.Recruitment;
 import com.bee.beehomepagebackend.recruitment.answer.Answer;
 import jakarta.persistence.*;
 import lombok.Builder;
