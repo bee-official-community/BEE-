@@ -18,6 +18,11 @@ spring:
     hibernate:
       ddl-auto: create
 
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+
 #ssh:
 #  user: "ec2-user"
 #  host: "43.202.56.212"

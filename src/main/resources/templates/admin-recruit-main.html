@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>관리자 메인 페이지</title>
+</head>
+<body>
+
+<h1>모집 공고 관리</h1>
+<h2>모집 공고 질문 목록</h2>
+
+<div th:each="question : ${questions}">
+    <span th:text="${question.getSequence()}"></span>
+    <span>번 </span>
+    <span th:text="${question.getContent()}"></span>
+    <br>
+    <div th:text="${question.getCreatedDateTime()}"></div>
+
+    <a th:href="@{/admin/recruits/questions/{questionId}(questionId=${question.id})}">수정하기</a>
+
+    <form th:action="@{/admin/recruits/questions/{questionId}(questionId=${question.id})}" th:method="delete">
+        <button type="submit">삭제하기</button>
+    </form>
+
+</div>
+
+<a th:href="@{/admin/recruits/questions/create}">모집 공고 질문 추가하기</a>
+
+
+
+</body>
+</html>
