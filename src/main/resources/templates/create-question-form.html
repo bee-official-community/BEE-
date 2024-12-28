@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>모집 공고 질문 추가하기</title>
+</head>
+<body>
+
+<form th:action method="post">
+
+    <div>
+        <label for="sequence">질문 번호:</label>
+        <input type="number" id="sequence" name="sequence" required>
+    </div>
+
+    <div>
+        <label for="content">질문 내용:</label>
+        <textarea id="content" name="content" rows="4" cols="50" placeholder="질문 내용을 입력하세요" required></textarea>
+    </div>
+
+    <div>
+        <label>모집 공고</label>
+        <select></select>
+    </div>
+
+    <div>
+        <button type="submit">질문 추가하기</button>
+    </div>
+</form>
+
+</body>
+</html>

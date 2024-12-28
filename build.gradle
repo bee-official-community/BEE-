@@ -25,12 +25,15 @@ repositories {
 
 dependencies {
     // Spring Boot
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // thymeleaf
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
     // Spring Security
-    implementation 'org.springframework.boot:spring-boot-starter-security'
+//    implementation 'org.springframework.boot:spring-boot-starter-security'
 
     // MySQL
     runtimeOnly 'com.mysql:mysql-connector-j'
@@ -38,15 +41,11 @@ dependencies {
     // H2 database
     implementation 'com.h2database:h2'
 
-    // Jsch ( Java Secure Channel, SSH 터널링을 위한 라이브러리 )
-    implementation 'com.jcraft:jsch:0.1.55'
-
-    // SSHJ ( SSH 터널링을 위한 라이브러리 )
-    implementation 'com.hierynomus:sshj:0.32.0'
-
     // lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+    // AWS SES
 
     // Test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

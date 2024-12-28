@@ -16,7 +16,12 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
+
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
 
 #ssh:
 #  user: "ec2-user"
