@@ -1,18 +1,18 @@
 package com.bee.beehomepagebackend.recruitment;
 
-import com.bee.beehomepagebackend.recruitment.question.response.GetAllQuestionsResponse;
-import com.bee.beehomepagebackend.recruitment.question.QuestionService;
 import com.bee.beehomepagebackend.recruitment.dto.request.ApplyRecruitRequest;
+import com.bee.beehomepagebackend.recruitment.dto.response.ApplyRecruitResponse;
+import com.bee.beehomepagebackend.recruitment.question.QuestionService;
+import com.bee.beehomepagebackend.recruitment.question.response.GetAllQuestionsResponse;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/recruits")
 @RequiredArgsConstructor
+@Slf4j
 public class RecruitmentController {
 
     private final RecruitmentService recruitmentService;
@@ -24,8 +24,9 @@ public class RecruitmentController {
     }
 
     @PostMapping("/apply")
-    public ResponseEntity<ApplyRecruitRequest> applyRecruit() {
-        return ResponseEntity.ok(null);
+    public ResponseEntity<ApplyRecruitResponse> applyRecruit(@RequestBody ApplyRecruitRequest request) {
+        log.info("AnswerRequest: {}", request.getAnswerRequests().toString());
+        return ResponseEntity.ok(recruitmentService.processApplication(request.toServiceRequest()));
     }
 
 }

@@ -59,4 +59,8 @@ public class Applicant {
         this.recruitment = recruitment;
         this.answers = answers;
     }
+
+    public void updateAnswers(List<Answer> answers) {
+        this.answers = answers;
+    }
 }

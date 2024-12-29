@@ -32,3 +32,7 @@ spring:
 #  localPort: 3307
 #  remotePort: 3306
 #  localHost: "localhost"
+
+logging:
+  level:
+    com.bee.beehomepagebackend.recruitment.RecruitmentService: DEBUG
