@@ -25,7 +25,6 @@ public class RecruitmentController {
 
     @PostMapping("/apply")
     public ResponseEntity<ApplyRecruitResponse> applyRecruit(@RequestBody ApplyRecruitRequest request) {
-        log.info("AnswerRequest: {}", request.getAnswerRequests().toString());
         return ResponseEntity.ok(recruitmentService.processApplication(request.toServiceRequest()));
     }
 

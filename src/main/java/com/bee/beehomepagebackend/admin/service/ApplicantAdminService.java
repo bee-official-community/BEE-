@@ -1,5 +1,6 @@
 package com.bee.beehomepagebackend.admin.service;
 
+import com.bee.beehomepagebackend.recruitment.answer.response.GetApplicantResponse;
 import com.bee.beehomepagebackend.recruitment.applicant.Applicant;
 import com.bee.beehomepagebackend.recruitment.applicant.ApplicantRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -16,12 +17,32 @@ public class ApplicantAdminService {
 
     private final ApplicantRepository applicantRepository;
 
-    public List<Applicant> getAllApplicants() {
-        return applicantRepository.findAll();
+    public List<GetApplicantResponse> getAllApplicants() {
+        List<Applicant> applicants = applicantRepository.findAll();
+        return applicants.stream()
+                .map(applicant -> GetApplicantResponse.builder()
+                        .id(applicant.getId())
+                        .username(applicant.getUsername())
+                        .generation(applicant.getGeneration().getText())
+                        .position(applicant.getPosition().getText())
+                        .email(applicant.getEmail())
+                        .phoneNumber(applicant.getPhoneNumber())
+                        .build())
+                .toList();
+
     }
 
-    public Applicant getApplicant(Long applicantId) {
-        return applicantRepository.findById(applicantId)
+    public GetApplicantResponse getApplicant(Long applicantId) {
+        Applicant applicant = applicantRepository.findById(applicantId)
                 .orElseThrow(() -> new EntityNotFoundException("지원자를 찾을 수 없습니다."));
+
+        return GetApplicantResponse.builder()
+                .id(applicant.getId())
+                .username(applicant.getUsername())
+                .generation(applicant.getGeneration().getText())
+                .position(applicant.getPosition().getText())
+                .email(applicant.getEmail())
+                .phoneNumber(applicant.getPhoneNumber())
+                .build();
     }
 }

@@ -6,16 +6,17 @@ import com.bee.beehomepagebackend.recruitment.applicant.Applicant;
 import com.bee.beehomepagebackend.recruitment.applicant.ApplicantService;
 import com.bee.beehomepagebackend.recruitment.dto.request.ApplyRecruitServiceRequest;
 import com.bee.beehomepagebackend.recruitment.dto.response.ApplyRecruitResponse;
-import com.bee.beehomepagebackend.recruitment.question.QuestionService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class RecruitmentService {
 
     private final RecruitmentRepository recruitmentRepository;
@@ -26,16 +27,18 @@ public class RecruitmentService {
 
         Recruitment recruitment = recruitmentRepository.findByGeneration(request.getGeneration());
         Applicant applicant = applicantService.registerApplicant(request, recruitment);
-        List<Answer> answers = answerService.storeAnswers(request, applicant);
-        applicant.updateAnswers(answers);
-        Applicant updatedApplicant = applicantService.storeApplicant(applicant);
-
-        log.debug("recruitment = {}, answers = {}, applicant = {}", recruitment, answers, updatedApplicant);
+        Applicant updatedApplicant = addAnswersToApplicant(request, applicant);
 
         return ApplyRecruitResponse.builder()
                 .username(updatedApplicant.getUsername())
                 .generation(updatedApplicant.getGeneration().getText())
                 .position(updatedApplicant.getPosition().getText())
                 .build();
+    }
+
+    private Applicant addAnswersToApplicant(ApplyRecruitServiceRequest request, Applicant applicant) {
+        List<Answer> answers = answerService.storeAnswers(request, applicant);
+        applicant.assignAnswers(answers);
+        return applicantService.storeApplicant(applicant);
     }
 }

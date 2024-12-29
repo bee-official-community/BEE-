@@ -4,6 +4,7 @@ import com.bee.beehomepagebackend.recruitment.Recruitment;
 import com.bee.beehomepagebackend.recruitment.answer.Answer;
 import com.bee.beehomepagebackend.recruitment.enums.Generation;
 import com.bee.beehomepagebackend.recruitment.enums.Position;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
@@ -60,7 +61,7 @@ public class Applicant {
         this.answers = answers;
     }
 
-    public void updateAnswers(List<Answer> answers) {
+    public void assignAnswers(List<Answer> answers) {
         this.answers = answers;
     }
 }
