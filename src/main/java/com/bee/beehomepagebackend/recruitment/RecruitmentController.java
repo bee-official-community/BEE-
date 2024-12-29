@@ -3,11 +3,13 @@ package com.bee.beehomepagebackend.recruitment;
 import com.bee.beehomepagebackend.recruitment.dto.request.ApplyRecruitRequest;
 import com.bee.beehomepagebackend.recruitment.dto.response.ApplyRecruitResponse;
 import com.bee.beehomepagebackend.recruitment.question.QuestionService;
-import com.bee.beehomepagebackend.recruitment.question.response.GetAllQuestionsResponse;
+import com.bee.beehomepagebackend.recruitment.question.response.GetQuestionResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/recruits")
@@ -19,7 +21,7 @@ public class RecruitmentController {
     private final QuestionService questionService;
 
     @GetMapping("/apply")
-    public ResponseEntity<GetAllQuestionsResponse> getAllQuestions() {
+    public ResponseEntity<List<GetQuestionResponse>> getAllQuestions() {
         return ResponseEntity.ok(questionService.getAllQuestions());
     }
 

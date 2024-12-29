@@ -9,12 +9,18 @@ import java.util.List;
 
 @Getter
 @NoArgsConstructor
-public class GetAllQuestionsResponse {
+public class GetQuestionResponse {
 
-    private List<Question> questions;
+    private Long id;
+
+    private int sequence;
+
+    private String content;
 
     @Builder
-    public GetAllQuestionsResponse(List<Question> questions) {
-        this.questions = questions;
+    public GetQuestionResponse(Long id, int sequence, String content) {
+        this.id = id;
+        this.sequence = sequence;
+        this.content = content;
     }
 }
